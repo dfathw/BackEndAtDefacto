@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 // const Authentication = require('../middlewares/token-validation')
 const ContentService = require('../services/content.service');
-const { getAllContent, getContentById, createContent, deleteContentById } = require('../controller/Content.controller');
+const { getAllContent, getContentById, createContent, deleteContentById } = require('../controller/content.controller');
 const contentService = new ContentService();
 
 // router.use(Authentication);
