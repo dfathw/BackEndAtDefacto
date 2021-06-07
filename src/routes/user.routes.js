@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Authentication = require('../middlewares/token-validation')
+// const Authentication = require('../middlewares/token-validation')
 const UserService = require('../services/user.service');
 const { getAllUser, getUserById, createUser, deleteUserById } = require('../controller/user.controller');
 const userService = new UserService();
