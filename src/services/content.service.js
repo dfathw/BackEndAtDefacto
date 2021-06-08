@@ -46,6 +46,24 @@ class UserService {
         }
         return result;
     }
+    async updateContent(newContent) {
+        const content = await Content.findOne({ where: { nomor_peraturan: newContent.nomor_peraturan } });
+        _.map(newContent, (prop) => {
+            content.prop = newContent.prop;
+        });
+        // employee.identity = newEmployee.identity;
+        let result;
+        try {
+            result = await content.save();
+        } catch (e) {
+            logEvent.emit('APP-ERROR', {
+                logTitle: 'UPDATE-CONTENT-SERVICE-FAILED',
+                logMessage: e
+            });
+            throw new Error(e);
+        }
+        return result;
+    }
     async deleteContentById(id) {
         const user = await Content.findByPk(id)
         let result;
