@@ -18,6 +18,7 @@ async function dataDummy() {
         email: 'ceritanya.email@ini.com'
     })
     let content1 = await Content.create({
+        judul: 'UNDANG-UNDANG TENTANG CIPTA KERJA.',
         nama_file: '2020uu011.pdf',
         nomor_peraturan: 11,
         jenis_peraturan: 'Undang-Undang',

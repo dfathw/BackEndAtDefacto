@@ -8,6 +8,9 @@ const Content = connection.define('Content', {
         primaryKey: true,
         allowNull: false
     },
+    judul: {
+        type: Sequelize.STRING
+    },
     nama_file: {
         type: Sequelize.STRING
     },
