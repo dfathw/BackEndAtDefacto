@@ -24,7 +24,10 @@ class UserService {
     async getContentById(id) {
         let result;
         try {
-            result = await Content.findByPk(id, { include: { model: User, as: Users } });
+            result = await Content.findOne({
+                where: { id: id },
+                include: { model: User, as: Users }
+            });
         } catch (e) {
             logEvent.emit('APP-ERROR', {
                 logTitle: 'GET-CONTENT-SERVICE-FAILED',
