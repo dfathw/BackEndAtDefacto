@@ -51,7 +51,6 @@ class UserService {
         _.map(newContent, (prop) => {
             content.prop = newContent.prop;
         });
-        // employee.identity = newEmployee.identity;
         let result;
         try {
             result = await content.save();
