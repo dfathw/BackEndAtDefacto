@@ -23,7 +23,7 @@ class UserService {
     async getUserById(id) {
         let result;
         try {
-            result = await User.findByPk(id);
+            result = await User.findByPk(id, { include: { model: Content, as: Contents } });
         } catch (e) {
             logEvent.emit('APP-ERROR', {
                 logTitle: 'GET-USER-SERVICE-FAILED',

@@ -1,5 +1,6 @@
 const logEvent = require('../events/logging.listener');
 const Content = require('../models/content.model');
+const User = require('../models/user.model')
 const bcrypt = require('bcrypt');
 
 async function hashPassword(password) {
@@ -23,7 +24,7 @@ class UserService {
     async getContentById(id) {
         let result;
         try {
-            result = await Content.findByPk(id);
+            result = await Content.findByPk(id, { include: { model: User, as: Users } });
         } catch (e) {
             logEvent.emit('APP-ERROR', {
                 logTitle: 'GET-CONTENT-SERVICE-FAILED',
