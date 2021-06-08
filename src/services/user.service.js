@@ -20,7 +20,7 @@ class UserService {
         }
         return result;
     }
-    async getUserById(id) {
+    async getUserById(ad) {
         let result;
         try {
             result = await User.findByPk(id, { include: { model: Content, as: Contents } });
